@@ -12,10 +12,3 @@ sbt run
 
 And then go to http://localhost:9000 to see the running web application.
 
-## Controllers
-
-- HomeController.java:
-
-- AsyncController.java:
-
-- CountController.java:
