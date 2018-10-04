@@ -1,0 +1,49 @@
+@(request: play.mvc.Http.Request)
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Twitter Search API</title>
+        <script src="@routes.Assets.versioned("javascripts/jquery-3.3.1.js")"></script>
+        <script src="@routes.Assets.versioned("javascripts/index.js")" type="text/javascript" ></script>
+        <link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("stylesheets/bootstrap.min.css")">
+        <link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("stylesheets/mdb.min.css")">
+        <link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("stylesheets/myCustomStyle.css")">
+    </head>
+    <body class="bodyFont" data-ws-url="@routes.HomeController.ws.webSocketURL(request)">
+        <h1 align="center" id="header">Let's<img src="@routes.Assets.versioned("images/playlogo.png")" height="70px" width="110px"> with Tweets!</h1>
+        <div class="container">
+            <div class="card">
+                <div class="card-body">
+
+                    <div class="row">
+
+                        <div class="col-sm-8">
+                            <h5>Search for Tweets</h5>
+                            <div class="md-form">
+                                <input type="text" id="searchBar" class="form-control" placeholder="Enter the search keyword">
+                                @* <label for="searchBar">Enter the keyword</label>*@
+                            </div>
+                        </div>
+
+
+                        <div class="col-sm-4">
+                            <button id="getTweets" class="btn btn-primary btn-md btn-lg">Search</button>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" id="contentDiv">
+            @*Your template code from index.js goes here.*@
+        </div>
+
+
+
+    </body>
+</html>

@@ -1,0 +1,39 @@
+@(screenName : String)
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>User Tweets</title>
+        <link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("stylesheets/bootstrap.min.css")">
+        <link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("stylesheets/mdb.min.css")">
+        <link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("stylesheets/myCustomStyle.css")">
+        <script src="@routes.Assets.versioned("javascripts/jquery-3.3.1.js")" type="text/javascript" ></script>
+        <script src="@routes.Assets.versioned("javascripts/displayTweets.js")" type="text/javascript" ></script>
+    </head>
+    <body class="bodyFont">
+
+        <input type="hidden" value="@routes.HomeController.getUserTweets(screenName)" id="apiAddress">
+        <br>
+        <div class="container" id="userInfoContainer">
+
+            <div class="card">
+                <div class="card card-body  z-depth-4">
+
+                    <p id="userInfo" class="card-title"></p>
+                    @*<p class="card-text" align="center">Twitter</p>*@
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <div class="container">
+            <div class="list-group" id="contentDiv">
+                <p class="list-group-item active waves-effect">
+                    Recent Tweets
+                </p>
+            </div>
+        </div>
+
+    </body>
+</html>
